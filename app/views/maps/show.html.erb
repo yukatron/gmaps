@@ -1,10 +1,12 @@
 <h1>GMap</h1>
 
-<p>name: <%= @map.name %><br>
+<div class="show-address">
+	<p>name: <%= @map.name %><br>
 	address: <%= @map.address %><br>
 	lat: <%= @map.latitude %><br>
 	lng: <%= @map.longitude %></p>
+</div>
 
 <div id="map"></div>
 
-
+<div><%= link_to '削除', map_path(@map.id), method: :delete %></div>

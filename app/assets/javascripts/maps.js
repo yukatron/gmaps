@@ -1,24 +1,26 @@
-function initMap () {
-	var latlng = {lat: <%= @map.latitude %>, lng: <%= @map.longitude %>};
-	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 15,
-		center: latlng
-	});
-	var transitLayer = new google.maps.TransitLayer();
-	transitlayer.setMap(map);
+let map
+let geocoder
 
-	var contentString = '<%= @map.address %>';
-	var infowindow = new google.maps.InfoWindow({
-		content: contentString
-	});
+function initMap(){
+  geocoder = new google.maps.Geocoder()
 
-	var marker = new google.maps.Maker({
-		position: latlng,
-		map: map,
-		title: contentString
-	});
+  map = new google.maps.Map(document.getElementById('map'), {
+  	center: {lat: -34.397, lng: 150.644},
+  	zoom: 8
+  });
+}
 
-	marker.addListener('click', function(){
-		infowindow.open(map, marker);
+function codeAddress(){
+	let inputAddress = document.getElementById('address').value;
+	geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+		if (status == 'OK') {
+			map.setCenter(results[0].geometry.location);
+			var marker = new google.maps.Marker({
+				map: map,
+				position: results[0].geometry.location
+			});
+		} else {
+			alert('Geocode was not successful for the following reason: ' + status);
+		}
 	});
 }

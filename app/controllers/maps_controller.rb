@@ -14,8 +14,14 @@ class MapsController < ApplicationController
   	@map = Map.find(params[:id])
   end
 
+  def destroy
+  	@map = Map.find(params[:id])
+  	@map.destroy
+  	redirect_to root_path
+  end
+
   private
   def map_params
-  	params.require(:map).permit(:name, :address)
+  	params.require(:map).permit(:name, :address, :longitude, :latitude)
   end
 end

@@ -1,12 +1,25 @@
 <h1>Maps#index</h1>
 
-<%= form_for(@map) do |f| %>
-
-<%= f.label :address %>
-<%= f.text_area :address, autofocus: true %>
+<%= form_with(model: @map, local: true) do |f| %>
 
 <%= f.label :name %>
 <%= f.text_area :name %>
 
+<%= f.label :address %>
+<%= f.text_area :address, autofocus: true, id:"address" %>
+
+<input type="button" value="Search" onclick="codeAddress()">
+<div id="map"></div>
+
 <%= f.submit 'save' %>
 <% end %>
+
+<div class="list">
+	<ul>
+		<% @maps.each do |map| %>
+			<li>
+				<%= link_to map.name, map_path(map.id) %>
+			</li>
+		<% end %>
+	</ul>
+</div>
