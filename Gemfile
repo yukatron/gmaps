@@ -66,3 +66,6 @@ gem 'jquery-rails'
 gem 'pry-byebug'
 gem 'geocoder'
 gem 'dotenv-rails'
+#gem "gmaps4rails"
+#gem "gon"
+gem 'rails-i18n'
