@@ -1,26 +1,26 @@
-let map
-let geocoder
+function initMap() {
 
-function initMap(){
-  geocoder = new google.maps.Geocoder()
+    var test ={lat: <%= @map.latitude %>, lng: <%= @map.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: test
+        <% binding.pry %>
+    });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
 
-  map = new google.maps.Map(document.getElementById('map'), {
-  	center: {lat: -34.397, lng: 150.644},
-  	zoom: 8
-  });
-}
+    var contentString = '住所：<%= @map.address %>';
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
 
-function codeAddress(){
-	let inputAddress = document.getElementById('address').value;
-	geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-		if (status == 'OK') {
-			map.setCenter(results[0].geometry.location);
-			var marker = new google.maps.Marker({
-				map: map,
-				position: results[0].geometry.location
-			});
-		} else {
-			alert('Geocode was not successful for the following reason: ' + status);
-		}
-	});
+    var marker = new google.maps.Marker({
+        position:test,
+        map: map,
+        title: contentString
+    });
+
+    marker.addListener('click', function() {
+        infowindow.open(map, marker);
+    });
 }

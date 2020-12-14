@@ -1,25 +1,39 @@
-<h1>Maps#index</h1>
+<div class="container">
+	<div class="row">
+		<h1>Maps#index</h1>
+	</div>
 
-<%= form_with(model: @map, local: true) do |f| %>
+	<div class="row">
+		<div class="form">
+			<%= form_with(model: @map, local: true) do |f| %>
 
-<%= f.label :name %>
-<%= f.text_area :name %>
+				<div class="field">
+					<%= f.label :name %>
+					<%= f.text_area :name %>
+				</div>
 
-<%= f.label :address %>
-<%= f.text_area :address, autofocus: true, id:"address" %>
+				<div class="field">
+					<%= f.label :address %>
+					<%= f.text_area :address, autofocus: true, id:"address" %>
+				</div>
 
-<input type="button" value="Search" onclick="codeAddress()">
-<div id="map"></div>
+				<div class="actions">
+					<%= f.submit 'save' %>
+				</div>
+			<% end %>
+		</div>
+	</div>
 
-<%= f.submit 'save' %>
-<% end %>
+	<div class="row">
+		<div class="list">
+			<ul>
+				<% @maps.each do |map| %>
+					<li>
+						<%= link_to map.name, map_path(map.id) %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 
-<div class="list">
-	<ul>
-		<% @maps.each do |map| %>
-			<li>
-				<%= link_to map.name, map_path(map.id) %>
-			</li>
-		<% end %>
-	</ul>
 </div>
