@@ -2,11 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.main-visual {
+	width: 100%;
+	height: 650px;
+	background-image: url(mv.png);
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+}
+
+.main-visual-title {
+	padding-top: 200px;
+	color: #FAFAFA;
+	font-size: 64px;
+}
+.main-visual-subtitle {
+	padding-top: 10px;
+	color: #FAFAFA;
+	font-size: 20px;
+}
+.new-map, .reference {
+	background-color: #ECEFF1;
+	padding: 90px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.maps-index {
+	padding: 90px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.maps {
+	width: 980px;
+}
+.maps-list {
+	display: inline-block;
+	width: 320px;
+	text-align: center;
+	margin-top: 30px;
+}
+.icon {
+	font-size: 40px;
+	padding-bottom: 10px;
+	color: #EC715F;
+}
+.maps-list-items {
+	text-decoration: none;
+	color: #000000;
+	font-size: 15px;
+	&:hover {
+		text-decoration: none;
+		color: #000000;
+	}
+}
+.map-box {
+	width: 300px;
+	height: 300px;
+	border: dashed 1px #000;
+	margin: 10px auto;
+	padding: 5px;
+}
+
 #map {
 	width: 400px;
 	height: 400px;
-}
-
-.form {
-	float: center;
 }

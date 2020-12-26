@@ -1,3 +1,4 @@
+
 <h1>GMap</h1>
 
 <div class="address">
@@ -7,6 +8,8 @@
 	lng: <%= @map.longitude %></p>
 </div>
 
+
+
 <div id="map"></div>
 
-<div><%= link_to '削除', map_path(@map.id), method: :delete %></div>
+<div><%= link_to '削除', map_path(@map.id), method: :delete %> | <%= link_to '戻る', root_path %></div>
