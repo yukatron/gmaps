@@ -1,25 +1,54 @@
-<h1>Maps#index</h1>
+<div class="container-fluid">
+	<div class="main-visual">
+		<p class="main-visual-title">
+			Practice Gmaps
+		</p>
+		<p class="main-visual-subtitle">
+			practice using Google Map API
+		</p>
+	</div>
 
-<%= form_with(model: @map, local: true) do |f| %>
+	<div class="new-map">
+		<h2>New Map</h2>
 
-<%= f.label :name %>
-<%= f.text_area :name %>
+		<div class="form-horizontal col-8 pt-4">
+			<%= form_with(model: @map, local: true) do |f| %>
 
-<%= f.label :address %>
-<%= f.text_area :address, autofocus: true, id:"address" %>
+				<div class="form-group row">
+					<%= f.label :name, class:"col-sm-2 col-form-label" %>
+					<%= f.text_field :name, class:"form-control col-5" %>
+				</div>
 
-<input type="button" value="Search" onclick="codeAddress()">
-<div id="map"></div>
+				<div class="form-group row">
+					<%= f.label :address, class:"col-sm-2 col-form-label" %>
+					<%= f.text_field :address, autofocus: true, id:"address", class:"form-control col-10" %>
+				</div>
 
-<%= f.submit 'save' %>
-<% end %>
+				<div class="actions">
+					<%= f.submit 'save', class:"btn btn-info col-3 float-right" %>
+				</div>
 
-<div class="list">
-	<ul>
-		<% @maps.each do |map| %>
-			<li>
-				<%= link_to map.name, map_path(map.id) %>
-			</li>
-		<% end %>
-	</ul>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="maps-index">
+		<h2>Maps List</h2>
+
+		<div class="maps">
+			<% @maps.each do |map| %>
+				<div class="maps-list">
+					<div><i class="fas fa-map-pin icon"></i></div>
+					<%= link_to map.name, map_path(map.id), class:"maps-list-items" %>
+					<div class="map-box"></div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="reference">
+		<h2>Reference Sites</h2>
+
+	</div>
+
 </div>

@@ -22,6 +22,6 @@ class MapsController < ApplicationController
 
   private
   def map_params
-  	params.require(:map).permit(:name, :address, :longitude, :latitude)
+  	params.require(:map).permit(:name, :address)
   end
 end
