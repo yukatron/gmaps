@@ -8,7 +8,7 @@
 		</p>
 	</div>
 
-	<div class="new-map">
+	<div class="flex2">
 		<h2>New Map</h2>
 
 		<div class="form-horizontal col-8 pt-4">
@@ -32,7 +32,7 @@
 		</div>
 	</div>
 
-	<div class="maps-index">
+	<div class="flex">
 		<h2>Maps List</h2>
 
 		<div class="maps">
@@ -40,13 +40,13 @@
 				<div class="maps-list">
 					<div><i class="fas fa-map-pin icon"></i></div>
 					<%= link_to map.name, map_path(map.id), class:"maps-list-items" %>
-					<div class="map-box"></div>
+					<div class="map-box"><div id="map"></div></div>
 				</div>
 			<% end %>
 		</div>
 	</div>
 
-	<div class="reference">
+	<div class="flex2">
 		<h2>Reference Sites</h2>
 
 	</div>

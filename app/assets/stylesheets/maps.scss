@@ -4,7 +4,7 @@
 
 .main-visual {
 	width: 100%;
-	height: 650px;
+	height: 550px;
 	background-image: url(mv.png);
 	background-size: cover;
 	background-position: center;
@@ -21,21 +21,21 @@
 	color: #FAFAFA;
 	font-size: 20px;
 }
-.new-map, .reference {
+.flex2 {
 	background-color: #ECEFF1;
 	padding: 90px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
-.maps-index {
+.flex {
 	padding: 90px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
 .maps {
-	width: 980px;
+	width: 990px;
 }
 .maps-list {
 	display: inline-block;
@@ -62,10 +62,11 @@
 	height: 300px;
 	border: dashed 1px #000;
 	margin: 10px auto;
-	padding: 5px;
 }
 
 #map {
-	width: 400px;
-	height: 400px;
+	display: inline-block;
+	width: 290px;
+	height: 290px;
+	margin: 5px;
 }
