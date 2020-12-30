@@ -1,24 +1,15 @@
-# README
+# GMAPの練習
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##サイト概要
+Gmap APIを使う練習
 
-Things you may want to cover:
+> 場所の住所と名称を登録
+登録した住所からGeocoderで緯度経度を取得
+-> 場所からマーカー付き地図を表示
 
-* Ruby version
+> いいね機能
+Deviseを使ったログイン機能と、非同期いいね機能の導入
 
-* System dependencies
+* Ruby version 5.2.4.4
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##参考サイト
