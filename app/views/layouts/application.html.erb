@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>Gmaps</title>
     <%= csrf_meta_tags %>
@@ -20,8 +20,8 @@
             <li class="header-nav-item"><a href="#" class="header-nav-link">New Map</a></li>
             <li class="header-nav-item"><a href="#" class="header-nav-link">Maps</a></li>
             <li class="header-nav-item"><a href="#" class="header-nav-link">Ref. Sites</a></li>
-            <li class="header-nav-item"><a href="#" class="header-nav-link">Registration</a></li>
-            <li class="header-nav-item"><a href="#" class="header-nav-link">Log in</a></li>
+            <li class="header-nav-item"><%= link_to new_user_registration_path, class:"header-nav-link" do %>Registration<% end %></li>
+            <li class="header-nav-item"><%= link_to new_user_session_path, class:"header-nav-link" do %>Log in<% end %></li>
           </ul>
         </nav>
       </div>
