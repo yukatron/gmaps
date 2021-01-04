@@ -1,15 +1,21 @@
+<div class="container-fluid">
+	<div class="flex">
+		<h1>GMap</h1>
 
-<h1>GMap</h1>
+		<div class="address">
+			<p>name: <%= @map.name %><br>
+				address: <%= @map.address, id:"address" %><br>
+				lat: <%= @map.latitude %><br>
+				lng: <%= @map.longitude %>
+			</p>
+		</div>
 
-<div class="address">
-	<p>name: <%= @map.name %><br>
-	address: <%= @map.address %><br>
-	lat: <%= @map.latitude %><br>
-	lng: <%= @map.longitude %></p>
+		<div class="map-box">
+			<div id="map"></div>
+		</div>
+
+		<div><%= link_to '削除', map_path(@map.id), method: :delete %> | <%= link_to '戻る', root_path %></div>
+		</div>
+
+	</div>
 </div>
-
-
-
-<div id="map"></div>
-
-<div><%= link_to '削除', map_path(@map.id), method: :delete %> | <%= link_to '戻る', root_path %></div>

@@ -12,7 +12,18 @@
 		<h2>New Map</h2>
 
 		<div class="form-horizontal col-8 pt-4">
-			<%= form_with(model: @map, local: true) do |f| %>
+			<%= form_for(@map) do |f| %>
+
+				<% if @map.errors.any? %>
+					<div id="error_explanation">
+						<h4><%= @map.errors.count %>件のエラーが発生しました</h4>
+						<ul>
+							<% @map.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+							<% end %>
+						</ul>
+					</div>
+				<% end %>
 
 				<div class="form-group row">
 					<%= f.label :name, class:"col-sm-2 col-form-label" %>
@@ -35,12 +46,11 @@
 	<div class="flex">
 		<h2>Maps List</h2>
 
-		<div class="maps">
+		<div class="maps row">
 			<% @maps.each do |map| %>
-				<div class="maps-list">
-					<div><i class="fas fa-map-pin icon"></i></div>
+				<div class="map-list-item col-4">
+					<i class="fas fa-map-pin icon"></i>
 					<%= link_to map.name, map_path(map.id), class:"maps-list-items" %>
-					<div class="map-box"><div id="map"></div></div>
 				</div>
 			<% end %>
 		</div>

@@ -16,11 +16,13 @@
 	color: #FAFAFA;
 	font-size: 64px;
 }
+
 .main-visual-subtitle {
 	padding-top: 10px;
 	color: #FAFAFA;
 	font-size: 20px;
 }
+
 .flex2 {
 	background-color: #ECEFF1;
 	padding: 90px;
@@ -28,26 +30,28 @@
 	align-items: center;
 	flex-direction: column;
 }
+
 .flex {
 	padding: 90px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
+
 .maps {
-	width: 990px;
+	width: 900px;
+	padding-top: 20px;
 }
-.maps-list {
-	display: inline-block;
-	width: 320px;
-	text-align: center;
-	margin-top: 30px;
-}
+
 .icon {
-	font-size: 40px;
-	padding-bottom: 10px;
+	font-size: 25px;
 	color: #EC715F;
 }
+
+.map-list-item {
+	padding-bottom: 10px;
+}
+
 .maps-list-items {
 	text-decoration: none;
 	color: #000000;
@@ -57,16 +61,22 @@
 		color: #000000;
 	}
 }
+
+.address {
+	padding-top: 20px;
+}
+
 .map-box {
-	width: 300px;
-	height: 300px;
+	display: inline-block;
+	width: 500px;
+	height: 500px;
 	border: dashed 1px #000;
 	margin: 10px auto;
 }
 
 #map {
 	display: inline-block;
-	width: 290px;
-	height: 290px;
-	margin: 5px;
+	width: 470px;
+	height: 470px;
+	margin: 15px;
 }
