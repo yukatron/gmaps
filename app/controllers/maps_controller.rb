@@ -7,7 +7,6 @@ class MapsController < ApplicationController
 
   def create
   	@map = Map.new(map_params)
-    binding.pry
   	if @map.save
   	 redirect_to map_path(@map)
     else
