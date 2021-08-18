@@ -22,15 +22,21 @@ function codeAddress(){
 
   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
     if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
+        let lat = results[0].geometry.location.lat();
+        let lng = results[0].geometry.location.lng();
+        let mark = {
+            lat: lat,
+            lng: lng
+        };
+        map.setCenter(results[0].geometry.location);
+        let marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location
-      });
+        });
 
-      display.textContent = "検索結果：" + results[ 0 ].geometry.location
-    } else {
-      alert('該当する結果がありませんでした：' + status);
-    }
-  });
+        display.textContent = "検索結果：" + results[ 0 ].geometry.location
+        } else {
+            alert('該当する結果がありませんでした：' + status);
+        }
+    });
 }
